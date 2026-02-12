@@ -22,31 +22,37 @@ Thank you for your interest in contributing to the Solar Load Calculator - Pakis
 ### 🔧 Code Contributions
 
 1. **Fork the Repository**
+
    ```bash
    git clone https://github.com/your-username/Solar-Load-Calculator.git
    ```
 
 2. **Create a Feature Branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 3. **Make Your Changes**
+
    - Follow the existing code style
    - Add comments for complex logic
    - Test your changes thoroughly
 
 4. **Commit Your Changes**
+
    ```bash
    git commit -m "feat: add your feature description"
    ```
 
 5. **Push to Your Branch**
+
    ```bash
    git push origin feature/your-feature-name
    ```
 
 6. **Open a Pull Request**
+
    - Provide a clear title and description
    - Reference any related issues
    - Include screenshots if applicable
@@ -142,6 +148,7 @@ docs: update installation instructions
 ```bash
 # Clone your fork
 git clone https://github.com/your-username/Solar-Load-Calculator.git
+```
 
 # Install dependencies
 npm install
@@ -155,7 +162,9 @@ npm run dev
 If you need help:
 
 - 📧 Email: net2outlawzz@gmail.com
+
 - 💬 GitHub Issues: Create an issue for questions
+
 - 📖 Documentation: Check the README.md
 
 ## 🙏 Recognition
