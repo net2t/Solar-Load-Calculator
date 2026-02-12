@@ -6,7 +6,7 @@ The Solar Load Calculator is a **single-page application (SPA)** built with vani
 
 ### 📁 File Structure
 
-```
+```text
 solar-calculator/
 ├── 📁 .github/
 │   └── 📁 workflows/           # GitHub Actions workflows
