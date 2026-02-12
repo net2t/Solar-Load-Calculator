@@ -1,0 +1,68 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run build
+      run: npm run build
+
+    - name: Run smoke test
+      run: |
+        echo "🚀 Running smoke test..."
+        if [ -f "dist/index.html" ]; then
+          echo "✅ Build successful - index.html exists"
+        else
+          echo "❌ Build failed - index.html missing"
+          exit 1
+        fi
+        
+        if [ -d "dist/assets" ]; then
+          echo "✅ Assets directory exists"
+        else
+          echo "❌ Assets directory missing"
+          exit 1
+        fi
+        
+        echo "✅ Smoke test passed!"
+
+    - name: Deploy to Netlify
+      if: github.ref == 'refs/heads/main'
+      uses: netlify/actions/cli@master
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --prod --dir=dist
+
+    - name: Deploy Preview to Netlify
+      if: github.ref != 'refs/heads/main'
+      uses: netlify/actions/cli@master
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --dir=dist

@@ -1,14 +1,48 @@
 {
-  "name": "solar-calculator",
+  "name": "solar-load-calculator-pakistan",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "☀️ Solar Load Calculator - Pakistan Edition. Calculate your home's solar load requirements with Pakistan-specific appliances and get the perfect inverter size recommendation.",
   "type": "module",
+  "keywords": [
+    "solar",
+    "calculator",
+    "pakistan",
+    "load-calculation",
+    "inverter",
+    "energy",
+    "renewable",
+    "vite",
+    "javascript",
+    "pakistani-appliances"
+  ],
+  "author": {
+    "name": "Solar Load Calculator Team",
+    "email": "net2outlawzz@gmail.com",
+    "url": "https://github.com/net2t"
+  },
+  "license": "MIT",
+  "homepage": "https://solarload-calculator.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/net2t/Solar-Load-Calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/net2t/Solar-Load-Calculator/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "echo 'No linting configured'",
+    "test": "echo 'No tests configured'",
+    "deploy": "npm run build && echo 'Ready for deployment'"
   },
   "devDependencies": {
     "vite": "^7.3.1"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=11.0.0"
   }
 }
