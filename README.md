@@ -209,7 +209,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **net2outlawzz@gmail.com**
 
 ### 🌐 Social
-- **GitHub**: [@net2t](https://github.com/net2t)
+- **GitHub**: [OutLawZ](https://github.com/net2t)
+- **Damadam**: [OutLawZ](http://damadam.pk/users/OutLawZ)
 - **Live Demo**: [solarload-calculator.netlify.app](https://solarload-calculator.netlify.app)
 
 ### 💬 Feedback
